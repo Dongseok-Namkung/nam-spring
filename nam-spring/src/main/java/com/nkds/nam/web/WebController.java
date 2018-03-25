@@ -1,4 +1,4 @@
-package com.nam.web;
+package com.nkds.nam.web;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -15,15 +15,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Handles requests for the application home page.
  */
 @Controller
+@RequestMapping(value = "/view")
 public class WebController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(WebController.class);
-	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/showMessage", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String showMessage(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
