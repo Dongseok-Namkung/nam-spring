@@ -6,34 +6,36 @@ import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.nkds.nam.main.service.UserService;
+import com.nkds.nam.main.vo.UserVO;
 
 /**
  * Handles requests for the application home page.
  */
 @Controller
 @RequestMapping(value = "/view")
-public class WebController {
+public class ViewController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(WebController.class);
+	private static final Logger logger = LoggerFactory.getLogger(ViewController.class);
+	@Autowired
+	private UserService userService;
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/showMessage", method = RequestMethod.GET)
-	public String showMessage(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	@RequestMapping(value = "/index.do", method = RequestMethod.GET)
+	public String index(Locale locale, Model model) {
+		UserVO userVO = userService.getUserInfo("8911520");
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
-		String formattedDate = dateFormat.format(date); 
+		model.addAttribute("userVO", userVO);
 		
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "showMessage";
+		return "index";
 	}
 	
 }
