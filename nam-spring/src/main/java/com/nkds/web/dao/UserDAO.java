@@ -11,10 +11,6 @@ public class UserDAO extends AbsRepsitory{
 	private static final Logger logger = LoggerFactory.getLogger(UserDAO.class);
 	
 	public User getUserInfo(String stfno) {
-		
-		User userVO = sqlSessionTemplate.selectOne("selectUser", stfno);
-		logger.info("@@userVO:"+userVO.getNm());
-		
-		return userVO;
+		return sqlSessionTemplate.selectOne("selectUser", stfno);
 	}
 }

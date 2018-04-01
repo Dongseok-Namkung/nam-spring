@@ -17,18 +17,23 @@ public class AspectConfig {
 	private static final Logger logger = LoggerFactory.getLogger(AspectConfig.class);
 	
 	@Around("execution(* com.nkds.web.service..*.*(..))")
-	public void executionTime(ProceedingJoinPoint joinPoint) {
+	public Object executionTime(ProceedingJoinPoint joinPoint) {
 		long startTime = System.currentTimeMillis();
+		Object returnVal = null;
+		
 		try {
-			joinPoint.proceed();
+			returnVal = joinPoint.proceed();
 		} catch (Throwable e) {
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		}
+		
 		long finishTime = System.currentTimeMillis();
 		
 		Signature signature = joinPoint.getSignature();
 		
 		logger.info(signature.getDeclaringTypeName()+"."+signature.getName()+": {} ms",(finishTime - startTime));
+		
+		return returnVal;
 	}
 
 }
