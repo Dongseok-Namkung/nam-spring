@@ -1,13 +1,13 @@
-package com.nkds.nam.main.vo;
+package com.nkds.web.model;
 
-public class UserVO {
+public class User {
 	private String stfno;
 	private String nm;
 	private String orgcd;
 	
-	public UserVO() {}
+	public User() {}
 	
-	public UserVO(String stfno, String nm) {
+	public User(String stfno, String nm) {
 		this.stfno = stfno;
 		this.nm = nm;
 	}

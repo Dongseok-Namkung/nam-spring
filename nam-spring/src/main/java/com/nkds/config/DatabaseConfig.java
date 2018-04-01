@@ -1,4 +1,4 @@
-package com.nkds.nam.config;
+package com.nkds.config;
 
 import javax.sql.DataSource;
 
@@ -55,8 +55,8 @@ public class DatabaseConfig {
     public SqlSessionFactoryBean sqlSessionFactoryPrimary() throws Exception {
     	
         SqlSessionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean();
-//        sessionFactoryBean.setDataSource((DataSource)applicationContext.getBean("dataSource"));
-        sessionFactoryBean.setDataSource(dataSource());
+        sessionFactoryBean.setDataSource((DataSource)applicationContext.getBean("dataSource"));
+//        sessionFactoryBean.setDataSource(dataSource());
         sessionFactoryBean.setConfigLocation(applicationContext.getResource("classpath:mybatis/mybatis-config.xml"));
         
         return sessionFactoryBean;

@@ -3,14 +3,14 @@
 <!DOCTYPE mapper 
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
         
-<mapper namespace="ep.batch.mapper.selectUser"> 
-    <select id="selectOrg" resultType="OrgVO"> 
+<mapper namespace="com.nkds.sql.mapper"> 
+    <select id="selectOrg" resultType="Org"> 
         SELECT orgcd
                ,orgnm
           FROM SAM_ORG 
     </select>
     
-    <insert id="insertOrg" parameterType="OrgVO"> 
+    <insert id="insertOrg" parameterType="Org"> 
         INSERT INTO sam_org_result (orgcd, orgnm) VALUES (#{orgcd}, #{orgnm})
     </insert>
 </mapper> 

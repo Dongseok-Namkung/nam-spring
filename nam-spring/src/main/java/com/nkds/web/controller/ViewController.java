@@ -1,4 +1,4 @@
-package com.nkds.nam.web;
+package com.nkds.web.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -12,8 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.nkds.nam.main.service.UserService;
-import com.nkds.nam.main.vo.UserVO;
+import com.nkds.web.model.User;
+import com.nkds.web.service.UserService;
 
 /**
  * Handles requests for the application home page.
@@ -30,7 +30,7 @@ public class ViewController {
 	 */
 	@RequestMapping(value = "/index.do", method = RequestMethod.GET)
 	public String index(Locale locale, Model model) {
-		UserVO userVO = userService.getUserInfo("8911520");
+		User userVO = userService.getUserInfo("8911520");
 		
 		
 		model.addAttribute("userVO", userVO);
