@@ -8,6 +8,6 @@
 		<title>Welcome</title>
 	</head> 
 	<body>
-		<h2>${userVO.nm}</h2>
+		<h2>${user.nm}</h2>
 	</body>
 </html>

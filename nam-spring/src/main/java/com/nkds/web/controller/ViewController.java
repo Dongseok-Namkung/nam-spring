@@ -30,10 +30,10 @@ public class ViewController {
 	 */
 	@RequestMapping(value = "/index.do", method = RequestMethod.GET)
 	public String index(Locale locale, Model model) {
-		User userVO = userService.getUserInfo("8911520");
+		User user = userService.getUserInfo("8911520");
 		
 		
-		model.addAttribute("userVO", userVO);
+		model.addAttribute("user", user);
 		
 		return "index";
 	}
