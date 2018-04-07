@@ -18,8 +18,6 @@ public class ResponseHandler {
 													,HttpStatus.NOT_FOUND);
 		}
 		
-		RT dto = (RT) new ModelMapper().map(model, dtoClass);
-		
-		return new ResponseEntity<RT>(dto, HttpStatus.OK);
+		return new ResponseEntity<RT>((RT) new ModelMapper().map(model, dtoClass), HttpStatus.OK);
 	}
 }
