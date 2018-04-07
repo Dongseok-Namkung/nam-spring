@@ -50,12 +50,13 @@ public class AspectConfig {
 		try {
 			rtnEntity = (ResponseEntity)joinPoint.proceed();
 		} catch (Throwable e) {
+			e.printStackTrace();
 			logger.error(e.getMessage());
 		}
         
-		if (rtnEntity.hasBody() == false) {
+		/*if (rtnEntity == null || rtnEntity.hasBody() == false) {
             return new ResponseEntity(new NamBizException("An internal server error occured"), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        }*/
         
 		return rtnEntity;
 	}

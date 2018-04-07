@@ -116,6 +116,12 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Nam/.gradle/caches/modules-2/files-2.1/org.modelmapper/modelmapper/0.7.5/5bef63ad6fa1008d56d27557e4a7f223fb639678/modelmapper-0.7.5.jar" sourcepath="C:/Users/Nam/.gradle/caches/modules-2/files-2.1/org.modelmapper/modelmapper/0.7.5/ee97b0011cb9626b56c88b23365a06dbd53efde/modelmapper-0.7.5-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Nam/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar" sourcepath="C:/Users/Nam/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/ab3976d4574c48d22dc1abf6a9e8bd0fdf928223/javax.servlet-api-3.1.0-sources.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
