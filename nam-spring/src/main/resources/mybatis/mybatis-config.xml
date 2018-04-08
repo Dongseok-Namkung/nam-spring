@@ -3,6 +3,11 @@
 <!DOCTYPE configuration 
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd"> 
 <configuration> 
+	<settings>
+		<setting name="callSettersOnNulls" value="true"></setting>
+		<setting name="jdbcTypeForNull" value="NULL"></setting>
+		<setting name="logPrefix" value="com.nkds_query"></setting>
+	</settings>
     <typeAliases> 
         <package name="com.nkds.web.model"/> 
     </typeAliases> 

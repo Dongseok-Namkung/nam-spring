@@ -3,7 +3,7 @@
 <!DOCTYPE mapper 
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
         
-<mapper namespace="com.nkds.sql.mapper.user"> 
+<mapper namespace="sql.com.nkds.sql.mapper.user"> 
     <select id="selectUser" resultType="User" parameterType="String"> 
         SELECT STFNO, NM, ORGCD FROM SAM_STF WHERE STFNO = #{stfno}
     </select>
